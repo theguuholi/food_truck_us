@@ -16,10 +16,10 @@ defmodule FoodTruckUs.ConvertCsvToMap do
       facility_type: map["FacilityType"],
       fire_prevention_districts: map["Fire Prevention Districts"],
       food_items: map["FoodItems"],
-      latitude: map["Latitude"],
+      latitude: map["Latitude"] |> convert_to_float(),
       location: map["Location"],
       location_description: map["LocationDescription"],
-      longitude: map["Longitude"],
+      longitude: map["Longitude"] |> convert_to_float(),
       noi_sent: map["NOISent"],
       neighborhoods: map["Neighborhoods (old)"],
       police_districts: map["Police Districts"],
@@ -39,4 +39,7 @@ defmodule FoodTruckUs.ConvertCsvToMap do
       permit: map["permit"]
     }
   end
+
+  defp convert_to_float("0"), do: 0.0
+  defp convert_to_float(field), do: field |> String.to_float()
 end
