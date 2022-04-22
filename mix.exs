@@ -5,7 +5,7 @@ defmodule FoodTruckUs.MixProject do
     [
       app: :food_truck_us,
       version: "0.1.0",
-      elixir: "~> 1.13",
+      elixir: "~> 1.13.4",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
