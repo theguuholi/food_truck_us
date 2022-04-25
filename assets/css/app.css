@@ -87,3 +87,18 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.food-truck-container{
+  display: inline-flex;
+  padding: 16px;
+}
+
+#map{
+  height: 90vh;
+  width: 80vw;
+}
+
+ul{
+  overflow-y: scroll;
+  height: 70vh;
+}
