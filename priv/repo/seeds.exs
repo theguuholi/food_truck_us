@@ -1,11 +1,6 @@
 alias FoodTruckUs.ConvertCsvToMap
-alias FoodTruckUs.FoodTruck
-alias FoodTruckUs.Repo
+alias FoodTruckUs.FoodTrucks
 
 "Mobile_Food_Facility_Permit.csv"
 |> ConvertCsvToMap.execute()
-|> Enum.each(fn food_truct ->
-  %FoodTruck{}
-  |> FoodTruck.changeset(food_truct)
-  |> Repo.insert()
-end)
+|> Enum.each(&FoodTrucks.create/1)
