@@ -31,7 +31,7 @@ jobs:
           mix deps.get
           mix ecto.create
       - name: ==> 🔎 Integrating test
-        run: mix coveralls.html --umbrella
+        run: mix coveralls.json
       - uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
