@@ -36,7 +36,7 @@ class FoodTruckLeaflet {
     }
 
     highlightMarker(foodTruck) {
-        const marker = this.markerForFoodTruck(foodTruck);;
+        const marker = this.markerForFoodTruck(foodTruck);
         marker.openPopup()
         this.map.panTo(marker.getLatLng())
     }
@@ -46,11 +46,12 @@ class FoodTruckLeaflet {
         this.map.eachLayer(layer => {
             if (layer instanceof L.Marker) {
                 const markerPosition = layer.getLatLng();
-                if (markerPosition.lat == foodTruck.latitude && markerPosition.lng == foodTruck.longitude) {
+                if (markerPosition.lat === foodTruck.latitude && markerPosition.lng === foodTruck.longitude) {
                     markerLayer = layer;
                 }
             }
         })
+        return markerLayer;
     }
 
 }

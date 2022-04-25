@@ -9,10 +9,12 @@ defmodule FoodTruckUsWeb.MapLive do
   end
 
   def handle_event("select_food_truck", %{"id" => id}, socket) do
+    selected_food_truck = FoodTrucks.find_food_truck(socket.assigns.food_trucks, id)
+
     socket =
-      socket.assigns.food_trucks
-      |> FoodTrucks.find_food_truck(id)
-      |> then(&assign(socket, selected_food_truck: &1))
+      socket
+      |> assign(selected_food_truck: selected_food_truck)
+      |> push_event("highlight-marker", selected_food_truck)
 
     {:noreply, socket}
   end
