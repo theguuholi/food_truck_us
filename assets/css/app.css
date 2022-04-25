@@ -87,3 +87,12 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.food-truck-container{
+  display: inline-flex;
+}
+
+#food-truck-map{
+  height: 100%;
+  width: 100%;
+}
