@@ -90,6 +90,7 @@
 
 .food-truck-container{
   display: inline-flex;
+  padding: 16px;
 }
 
 #map{
