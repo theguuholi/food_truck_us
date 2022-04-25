@@ -14,7 +14,8 @@
     </ul>
 
     <div id="wrapper" phx-update="ignore">
-        <div id="map" phx-hook="FoodTruckMap" data-food-trucks={ Jason.encode!(@food_trucks)}
-            data-select-point={@food_trucks |> hd |> Jason.encode!()}></div>
+        <%# <div id="map" phx-hook="FoodTruckMap" data-food-trucks={ Jason.encode!(@food_trucks)}
+            data-select-point={@food_trucks |> hd |> Jason.encode!()}></div> %>
+        <div id="map" phx-hook="FoodTruckMap" data-select-point={@food_trucks |> hd |> Jason.encode!()}></div>
     </div>
 </div>

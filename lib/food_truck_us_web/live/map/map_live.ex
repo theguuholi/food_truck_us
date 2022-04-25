@@ -22,7 +22,15 @@ defmodule FoodTruckUsWeb.MapLive do
 
   def handle_event("marker-clicked", food_truck_id, socket) do
     selected_food_truck = FoodTrucks.find_food_truck(socket.assigns.food_trucks, food_truck_id)
-    {:noreply, assign(socket, selected_food_truck: selected_food_truck)}
+    term = %{food_truck: selected_food_truck}
+    socket = assign(socket, selected_food_truck: selected_food_truck)
+    {:reply, term, socket}
+  end
+
+  def handle_event("load-food-trucks", _, socket) do
+    food_trucks = socket.assigns.food_trucks
+    term = %{food_trucks: food_trucks}
+    {:reply, term, socket}
   end
 
   def handle_info({:new_food_truck, food_truck}, socket) do
