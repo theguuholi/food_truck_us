@@ -9,7 +9,7 @@ class FoodTruckLeaflet {
         L.tileLayer(
             "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
                 attribution: "Gustavo Oliveira",
-                mapZoom: 18,
+                mapZoom: 40,
                 id: "mapbox/streets-v11",
                 tileSize: 512,
                 zoomOffset: -1,
