@@ -1,4 +1,4 @@
-import FoodTruckMap from "./hooks/FoodTruckMap"
+import FoodTruckMap from "./hooks/foodTruckMap"
 let Hooks = {
     FoodTruckMap: FoodTruckMap
 }

@@ -92,7 +92,12 @@
   display: inline-flex;
 }
 
-#food-truck-map{
-  height: 100%;
-  width: 100%;
+#map{
+  height: 90vh;
+  width: 80vw;
+}
+
+ul{
+  overflow-y: scroll;
+  height: 90vh;
 }
