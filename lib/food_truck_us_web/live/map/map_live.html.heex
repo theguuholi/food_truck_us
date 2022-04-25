@@ -1,0 +1,14 @@
+<h1>Food Trucks</h1>
+
+<ul data-role="food-truck-list">
+    <%= for food_truck <- @food_trucks do %>
+    <li data-role="food-truck" data-id={food_truck.id} phx-click="select_food_truck" phx-value-id={food_truck.id}
+        class={@selected_food_truck==food_truck.id && "selected" }>
+        <%= food_truck.applicant %>
+    </li>
+    <% end %>
+</ul>
+
+
+<div id="food-truck-map">
+</div>
