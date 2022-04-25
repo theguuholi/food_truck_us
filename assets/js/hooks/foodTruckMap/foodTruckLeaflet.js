@@ -21,11 +21,21 @@ class FoodTruckLeaflet {
     }
 
     addMarker(foodTruck) {
+        console.log(foodTruck)
+
         const marker = L.marker([foodTruck.latitude, foodTruck.longitude], {
                 foodTruckId: foodTruck.id
             })
             .addTo(this.map)
-            .bindPopup(foodTruck.applicant)
+            .bindPopup(
+                `
+                    <h3>${foodTruck.applicant}</h3>
+                    <span><strong>Description: </strong>${foodTruck.food_items}</span>
+                    <br>
+                    <br>
+                    <span><strong>Location: </strong>${foodTruck.location_description}</span>
+                `
+            )
 
         marker.on("click", e => {
             marker.openPopup();

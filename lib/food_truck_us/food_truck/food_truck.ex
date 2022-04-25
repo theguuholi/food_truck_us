@@ -2,7 +2,8 @@ defmodule FoodTruckUs.FoodTrucks.FoodTruck do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @derive {Jason.Encoder, only: [:id, :applicant, :latitude, :longitude]}
+  @only_fields [:id, :applicant, :latitude, :longitude, :food_items, :location_description]
+  @derive {Jason.Encoder, only: @only_fields}
   @fields ~w/address applicant location_description cnn facility_type food_items latitude longitude status/a
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
