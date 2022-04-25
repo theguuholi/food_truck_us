@@ -20,7 +20,7 @@ defmodule FoodTruckUsWeb.MapLive do
     {:noreply, socket}
   end
 
-  def handle_event("marker-clicked", food_truck_id, socket) do
+  def handle_event("marker-clicked", %{"id" => food_truck_id}, socket) do
     selected_food_truck = FoodTrucks.find_food_truck(socket.assigns.food_trucks, food_truck_id)
     term = %{food_truck: selected_food_truck}
     socket = assign(socket, selected_food_truck: selected_food_truck)
@@ -33,13 +33,13 @@ defmodule FoodTruckUsWeb.MapLive do
     {:reply, term, socket}
   end
 
-  def handle_info({:new_food_truck, food_truck}, socket) do
-    socket =
-      socket
-      |> update(:food_trucks, &[food_truck | &1])
-      |> assign(selected_food_truck: food_truck)
-      |> push_event("add-marker", food_truck)
+  # def handle_info({:new_food_truck, food_truck}, socket) do
+  #   socket =
+  #     socket
+  #     |> update(:food_trucks, &[food_truck | &1])
+  #     |> assign(selected_food_truck: food_truck)
+  #     |> push_event("add-marker", food_truck)
 
-    {:noreply, socket}
-  end
+  #   {:noreply, socket}
+  # end
 end
