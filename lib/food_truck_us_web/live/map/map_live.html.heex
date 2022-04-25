@@ -1,5 +1,6 @@
 <h1>Food Trucks</h1>
 
+<div class="food-truck-container">
 <ul data-role="food-truck-list">
     <%= for food_truck <- @food_trucks do %>
     <li data-role="food-truck" data-id={food_truck.id} phx-click="select_food_truck" phx-value-id={food_truck.id}
@@ -10,5 +11,5 @@
 </ul>
 
 
-<div id="food-truck-map">
+<div id="food-truck-map" phx-hook="FoodTruckMap"></div>
 </div>
