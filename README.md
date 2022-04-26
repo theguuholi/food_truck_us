@@ -1,5 +1,9 @@
 # FoodTruckUs
 
+[![codecov](https://codecov.io/gh/theguuholi/food_truck_us/branch/main/graph/badge.svg?token=aNDNhwJLWs)](https://codecov.io/gh/theguuholi/food_truck_us) 
+[![Gigalixir CD](https://github.com/theguuholi/food_truck_us/actions/workflows/cd.yml/badge.svg)](https://github.com/theguuholi/food_truck_us/actions/workflows/cd.yml) 
+[![CI-Tests](https://github.com/theguuholi/food_truck_us/actions/workflows/tests.yml/badge.svg)](https://github.com/theguuholi/food_truck_us/actions/workflows/tests.yml)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
